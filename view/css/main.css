@@ -1,0 +1,6 @@
+.log_window {
+  width: 100%;
+  height: 300px;
+  overflow-y: scroll;
+  /*display: none;*/
+}

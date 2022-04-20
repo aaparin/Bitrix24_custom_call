@@ -1,0 +1,41 @@
+/* Кастомизация Bootstrap */
+
+.container {
+  max-width: 95vw !important;
+}
+
+/** 
+ * Блок кастомизации Bootstrap
+ */
+
+.form-control:focus,
+.custom-select:focus,
+.custom-file-input:focus,
+.custom-file-label:focus {
+  box-shadow: 0 0 0 0.2rem rgba(249, 48, 48, 0.25) !important;
+  border-color: rgba(249, 48, 48, 0.5) !important;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+  box-shadow: 0 0 0 0.2rem rgba(249, 48, 48, 0.25) !important;
+  border-color: rgba(249, 48, 48, 0.5) !important;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgba(249, 48, 48, 0.25) !important;
+  border-color: #f93030 !important;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  border-color: rgba(249, 48, 48, 0.5) !important;
+  background-color: #f93030;
+}
+
+.container {
+  max-width: 99%;
+}
+
+.toast {
+  backdrop-filter: blur(2px) !important;
+}
