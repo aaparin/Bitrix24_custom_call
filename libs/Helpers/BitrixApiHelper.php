@@ -1,6 +1,6 @@
 <?php
-namespace B1Integration\libs\helpers;
-use B1Integration\libs\crest\CRestPlus as CRP;
+namespace CallApplication\libs\helpers;
+use CallApplication\libs\crest\CRestPlus as CRP;
 use Noodlehaus\Config;
 
 class BitrixApiHelper {

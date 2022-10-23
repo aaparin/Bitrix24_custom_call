@@ -1,13 +1,12 @@
 <?php
 
-use B1Integration\libs\crest\CRestPlus as CRP;
-use B1Integration\libs\B1Class\B1;
-use B1Integration\libs\helpers\B1Helper;
-use B1Integration\libs\helpers\Helpers;
-use B1Integration\libs\debugger\Debugger;
+use CallApplication\libs\crest\CRestPlus as CRP;
+use CallApplication\libs\helpers\Helpers;
+use CallApplication\libs\debugger\Debugger;
 use Noodlehaus\Config;
-use B1Integration\libs\helpers\UserSettings;
-use B1Integration\libs\helpers\BitrixApiHelper;
+use CallApplication\libs\helpers\UserSettings;
+use CallApplication\libs\helpers\BitrixApiHelper;
+
 /**
  * Блок проверки ID портала
  */
@@ -25,11 +24,11 @@ require_once __DIR__ . '/libs/autoloader.php';
  */
 define('DOMAIN', $_REQUEST['DOMAIN']); // Используется в JavaScript
 define(
-  'PORTAL_URL',
-  ($_REQUEST['PROTOCOL'] == '1' ? 'https://' : 'http://') . DOMAIN
+    'PORTAL_URL',
+    ($_REQUEST['PROTOCOL'] == '1' ? 'https://' : 'http://') . DOMAIN
 );
-define('APP_NAME', 'Bitrix24 - B1 integration');
-define('USER_SETTINGS', __DIR__.'/libs/userconfig.json');
+define('APP_NAME', 'Bitrix24 - Настройки карточки телефонии');
+define('USER_SETTINGS', __DIR__ . '/userconfig.json');
 
 
 /**
@@ -37,19 +36,20 @@ define('USER_SETTINGS', __DIR__.'/libs/userconfig.json');
  */
 $installedTrigger = false; // Триггер "Приложение успешно установлено"
 if (
-  isset($_REQUEST['PLACEMENT_OPTIONS']) &&
-  $_REQUEST['PLACEMENT_OPTIONS'] == '{"install_finished":"Y"}'
+    isset($_REQUEST['PLACEMENT_OPTIONS']) &&
+    $_REQUEST['PLACEMENT_OPTIONS'] == '{"install_finished":"Y"}'
 ) {
-  $installedTrigger = true;
+    $installedTrigger = true;
 }
 
 //Config init
 $conf = new Config(USER_SETTINGS);
-$b1 = new B1(['apiKey' => $conf->get('b1ApiKey'), 'privateKey' => $conf->get('b1ApiPass')]);
 
-if(isset($_POST['type'])){
-    switch ($_POST['type']){
-
+if (isset($_POST['type'])) {
+    switch ($_POST['type']) {
+        case 'settings':
+            UserSettings::saveAllData($conf, $_POST);
+            break;
     }
 }
 

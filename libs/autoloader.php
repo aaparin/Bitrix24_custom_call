@@ -15,15 +15,11 @@ define('CLASSES', [
   'BX24',
   'debugger/Debugger',
   'crest/CRestPlus',
-  'DB/MysqlDb',
   'Helpers/UserSettings',
   'Helpers/Logs',
-  'Helpers/B1Helper',
   'Helpers/Helpers',
   'Helpers/BitrixApiHelper',
-  'B1/B1Class',
-  'Sync/Categories',
-  'Sync/Items',
+  'Helpers/UserSettings',
 ]);
 
 // Composer
@@ -40,5 +36,5 @@ spl_autoload_register(function () {
   }
 });
 
-$App = new B1Integration\libs\Application();
-$BX24 = new B1Integration\libs\BX24();
+$App = new CallApplication\libs\Application();
+$BX24 = new CallApplication\libs\BX24();

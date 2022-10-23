@@ -1,7 +1,7 @@
 <?php
 
 /** Определение пространства имён */
-namespace B1Integration\libs\debugger;
+namespace CallApplication\libs\debugger;
 
 /**
  * Класс методов логирования

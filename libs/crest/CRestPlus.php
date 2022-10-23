@@ -1,6 +1,6 @@
 <?php
 
-namespace B1Integration\libs\crest;
+namespace CallApplication\libs\crest;
 
 require_once 'CRest.php';
 

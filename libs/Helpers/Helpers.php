@@ -1,6 +1,6 @@
 <?php
 
-namespace B1Integration\libs\Helpers;
+namespace CallApplication\libs\Helpers;
 
 class Helpers {
     public static function Text2Bool(string $textBool){

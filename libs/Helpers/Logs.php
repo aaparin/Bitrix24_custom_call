@@ -1,5 +1,5 @@
 <?php
-namespace B1Integration\libs\helpers;
+namespace CallApplication\libs\helpers;
 
 class Logs {
     static function getLogData($patch){

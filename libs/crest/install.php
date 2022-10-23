@@ -2,12 +2,12 @@
 /**
  * Определение пространства имён
  */
-namespace B1Integration\libs\crest;
+namespace CallApplication\libs\crest;
 
 /**
  * Настройка пространства имён
  */
-use B1Integration\libs\crest\CRestPlus as CRP;
+use CallApplication\libs\crest\CRestPlus as CRP;
 
 require_once __DIR__ . '/CRestPlus.php';
 CRP::installApp();
